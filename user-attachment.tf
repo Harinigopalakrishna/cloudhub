@@ -1,4 +1,6 @@
-resource "aws_iam_group_policy_attachment" "harin" {
-name="attach"
-  group      = aws_iam_group.harin.s3-access
-  user       = [aws_iam_user.harin.prarth]
+resource "aws_iam_user_policy_attachment" "harin" {
+  
+  user       = aws_iam_user.harin.name
+  policy_arn ="arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+
+}
